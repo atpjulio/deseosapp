@@ -10,6 +10,11 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {PendingsPage} from "../pages/pendings/pendings";
+import {FinishedPage} from "../pages/finished/finished";
+import { WishListProvider } from '../providers/wish-list/wish-list';
+import {AddPage} from "../pages/add/add";
+import {PlaceholderPipe} from "../pipes/placeholder/placeholder";
 
 @NgModule({
   declarations: [
@@ -17,7 +22,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    PendingsPage,
+    FinishedPage,
+    AddPage,
+    PlaceholderPipe
   ],
   imports: [
     BrowserModule,
@@ -29,12 +38,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    PendingsPage,
+    FinishedPage,
+    AddPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    WishListProvider
   ]
 })
 export class AppModule {}
