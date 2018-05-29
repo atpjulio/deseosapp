@@ -12,14 +12,29 @@ export class WishListProvider {
   listas: List[] = [];
 
   constructor() {
-    // console.log('Hello WishListProvider Provider');
-    let lista1 = new List('Compra de supermercado');
-    let lista2 = new List('Juegos que deseo');
-    let lista3 = new List('Cosas del trabajo');
+    this.getList();
+  }
 
-    this.listas.push(lista1);
-    this.listas.push(lista2);
-    this.listas.push(lista3);
+  updateList() {
+    localStorage.setItem("data", JSON.stringify(this.listas));
+  }
+
+  getList() {
+    if (localStorage.getItem("data")) {
+      this.listas = JSON.parse(localStorage.getItem("data"));
+    }
+  }
+
+  addList(list: List) {
+    this.listas.push(list);
+    this.updateList();
+    // console.log('Revisar storage');
+  }
+
+  deleteList(index: number) {
+    this.listas.splice(index,1);
+    this.updateList();
+    console.log('Revisar storage');
   }
 
 }

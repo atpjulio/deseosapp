@@ -15,6 +15,8 @@ import {FinishedPage} from "../pages/finished/finished";
 import { WishListProvider } from '../providers/wish-list/wish-list';
 import {AddPage} from "../pages/add/add";
 import {PlaceholderPipe} from "../pipes/placeholder/placeholder";
+import {DetailPage} from "../pages/detail/detail";
+import {PendientesPipe} from "../pipes/pendientes/pendientes";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {PlaceholderPipe} from "../pipes/placeholder/placeholder";
     PendingsPage,
     FinishedPage,
     AddPage,
-    PlaceholderPipe
+    DetailPage,
+    PlaceholderPipe,
+    PendientesPipe
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,8 @@ import {PlaceholderPipe} from "../pipes/placeholder/placeholder";
     TabsPage,
     PendingsPage,
     FinishedPage,
-    AddPage
+    AddPage,
+    DetailPage
   ],
   providers: [
     StatusBar,

@@ -54,7 +54,7 @@ export class AddPage {
     }
     let lista = new List(this.nombreLista);
     lista.items = this.items;
-    this.wishList.listas.push(lista);
+    this.wishList.addList(lista);
     this.navCtrl.pop();
   }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {WishListProvider} from "../../providers/wish-list/wish-list";
 import {AddPage} from "../add/add";
+import {DetailPage} from "../detail/detail";
 
 /**
  * Generated class for the PendingsPage page.
@@ -27,5 +28,9 @@ export class PendingsPage {
 
   addList() {
     this.navCtrl.push(AddPage);
+  }
+
+  listDetail(list, index: number) {
+    this.navCtrl.push(DetailPage, { list, index });
   }
 }
